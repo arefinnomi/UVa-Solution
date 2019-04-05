@@ -3,12 +3,12 @@
 
 int main()
 {
-    double pow , base ;
+	double pow , base ;
 
-    while(scanf("%lf %lf", &pow, &base) != EOF)
-    {
+	while(scanf("%lf %lf", &pow, &base) != EOF)
+	{
 
-        printf("%lf\n", exp( log( base ) / pow ));
-    }
-    return 0;
+		printf("%lf\n", exp( log( base ) / pow ));
+	}
+	return 0;
 }

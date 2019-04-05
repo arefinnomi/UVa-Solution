@@ -3,26 +3,26 @@
 
 int main()
 {
-    while (1)
-    {
-        char n;/*column & row of square*/
+	while (1)
+	{
+		char n;/*column & row of square*/
 
-        scanf("%d", &n);
+		scanf("%d", &n);
 
-        if ( n == 0) break;
+		if ( n == 0) break;
 
-        int count = 0;
+		int count = 0;
 
-        for ( ; n ; n--)
-        {
+		for ( ; n ; n--)
+		{
 
-            count = count + n * n;
-        }
+			count = count + n * n;
+		}
 
 
-        printf("%d\n", count);
+		printf("%d\n", count);
 
-    }
+	}
 
-    return 0;
+	return 0;
 }

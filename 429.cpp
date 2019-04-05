@@ -36,70 +36,70 @@ int Size = 0;
 
 int bfs(int src, int des)
 {
-    if( src == des) return 0;
-    queue < int > temp;
+	if( src == des) return 0;
+	queue < int > temp;
 
-    int cost[Size];
-    bool visited[Size];
+	int cost[Size];
+	bool visited[Size];
 
-    for(int i = 0; i < Size; i++) cost[i] = 0, visited[i] = 0;
+	for(int i = 0; i < Size; i++) cost[i] = 0, visited[i] = 0;
 
-    cost[src] = 0;
-    visited[src] = 1;
-    temp.push(src);
-    int p, q;
+	cost[src] = 0;
+	visited[src] = 1;
+	temp.push(src);
+	int p, q;
 
-    while(temp.size() )
-    {
-        p = temp.front();
+	while(temp.size() )
+	{
+		p = temp.front();
 
-        for(int i = 0;  i < grp[p].size(); i++)
-        {
-            q = grp[p][i];
+		for(int i = 0;  i < grp[p].size(); i++)
+		{
+			q = grp[p][i];
 
 //			cout<<"pushed:"<<q<<endl;
-            if( !visited[q])
-            {
-                if( q == des ) return cost[p] + 1;
+			if( !visited[q])
+			{
+				if( q == des ) return cost[p] + 1;
 
-                cost[q] = cost[p] + 1;
-                visited[q] = 1;
-                temp.push(q);
-            }
-        }
-        temp.pop();
-    }
+				cost[q] = cost[p] + 1;
+				visited[q] = 1;
+				temp.push(q);
+			}
+		}
+		temp.pop();
+	}
 
-    if( !temp.size()) return -1;
+	if( !temp.size()) return -1;
 }
 
 
 bool check( string str1, string str2)
 {
-    if( str1.size() != str2.size()) return 0;
+	if( str1.size() != str2.size()) return 0;
 
-    int match = 0;
+	int match = 0;
 
-    for(int i = 0; i < str1.size() && i < str2.size(); i++) if( str1[i] == str2[i]) match++;
+	for(int i = 0; i < str1.size() && i < str2.size(); i++) if( str1[i] == str2[i]) match++;
 
-    if( match+1 == str1.size() ) return 1;
-    else return 0;
+	if( match+1 == str1.size() ) return 1;
+	else return 0;
 }
 
 
 void constract_grp(void)
 {
-    for( int i = 0; i <= Size; i++)
-    {
-        for(int j = 0; j < i; j++)
-        {
-            if( check( str[i], str[j] ))
-            {
-                grp[indx[str[i]]].push_back( indx[str[j]]);
-                grp[indx[str[j]]].push_back( indx[str[i]]);
-            }
-        }
-    }
+	for( int i = 0; i <= Size; i++)
+	{
+		for(int j = 0; j < i; j++)
+		{
+			if( check( str[i], str[j] ))
+			{
+				grp[indx[str[i]]].push_back( indx[str[j]]);
+				grp[indx[str[j]]].push_back( indx[str[i]]);
+			}
+		}
+	}
 
 
 }
@@ -107,47 +107,47 @@ void constract_grp(void)
 int main()
 {
 //	freopen("o.txt", "w", stdout);
-    string temp1, temp2;
+	string temp1, temp2;
 
-    int n;
-    int pos;
+	int n;
+	int pos;
 
-    cin >> n;
+	cin >> n;
 
-    while( n--)
-    {
-        Size = 0;
+	while( n--)
+	{
+		Size = 0;
 
-        while(1)
-        {
-            cin >> temp1;
-            if( temp1 == "*") break;
-            indx.insert( pair < string, int > ( temp1, Size));
-            str[Size] = temp1;
-            Size++;
-        }
+		while(1)
+		{
+			cin >> temp1;
+			if( temp1 == "*") break;
+			indx.insert( pair < string, int > ( temp1, Size));
+			str[Size] = temp1;
+			Size++;
+		}
 
-        constract_grp();
-        cin.ignore();
-        while(1)
-        {
-            getline(cin, temp1);
+		constract_grp();
+		cin.ignore();
+		while(1)
+		{
+			getline(cin, temp1);
 
-            if( temp1 == "") break;
+			if( temp1 == "") break;
 
-            pos = temp1.find(" ");
+			pos = temp1.find(" ");
 
-            temp2 = temp1.substr(pos+1, temp1.size());
-            temp1.erase( temp1.begin() + pos, temp1.end());
+			temp2 = temp1.substr(pos+1, temp1.size());
+			temp1.erase( temp1.begin() + pos, temp1.end());
 
 			cout<<temp1<<' '<<temp2<<' '<<bfs( indx[temp1], indx[temp2])<<endl;
-        }
+		}
 
-        if(n) nwl;
-        indx.clear();
+		if(n) nwl;
+		indx.clear();
 
-        for(int i = 0; i < 300; i++) grp[i].clear();
+		for(int i = 0; i < 300; i++) grp[i].clear();
 
-    }
-    return 0;
+	}
+	return 0;
 }

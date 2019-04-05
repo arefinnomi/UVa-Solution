@@ -3,50 +3,50 @@
 
 int main()
 {
-    short test;
-    scanf("%hd", &test);
+	short test;
+	scanf("%hd", &test);
 
-    while(test--)
-    {
-        long int sides[4];
-
-
-        scanf("%ld %ld %ld %ld", &sides[0],  &sides[1],  &sides[2], &sides[3]);
+	while(test--)
+	{
+		long int sides[4];
 
 
-
-        char i, j;
-        for( i = 0; i < 4 ; i++) /*sorting*/
-        {
-            for( j = i + 1 ; j < 4 ; j++)
-            {
-
-                if( sides[i] > sides[j] )
-                {
-                    long int temp = sides[i];
-                    sides[i] = sides[j];
-                    sides[j] = temp ;
-                }
-            }
-
-        }
+		scanf("%ld %ld %ld %ld", &sides[0],  &sides[1],  &sides[2], &sides[3]);
 
 
-        if( sides[0] == sides[1] && sides[1] == sides[2] && sides[2] == sides[3] ) printf("square");
 
-        else if (  sides[0] == sides[1] && sides[2] == sides[3] ) printf("rectangle");
+		char i, j;
+		for( i = 0; i < 4 ; i++) /*sorting*/
+		{
+			for( j = i + 1 ; j < 4 ; j++)
+			{
 
-        else
-        {
-            double three =  0.0 + sides[0] + sides[1] + sides[2] ; /*summation of smallest three sides*/
+				if( sides[i] > sides[j] )
+				{
+					long int temp = sides[i];
+					sides[i] = sides[j];
+					sides[j] = temp ;
+				}
+			}
+
+		}
 
 
-            if ( three >= sides[3]) printf("quadrangle");
+		if( sides[0] == sides[1] && sides[1] == sides[2] && sides[2] == sides[3] ) printf("square");
 
-            else printf("banana");
-        }
-        printf("\n");
-    }
+		else if (  sides[0] == sides[1] && sides[2] == sides[3] ) printf("rectangle");
 
-    return 0;
+		else
+		{
+			double three =  0.0 + sides[0] + sides[1] + sides[2] ; /*summation of smallest three sides*/
+
+
+			if ( three >= sides[3]) printf("quadrangle");
+
+			else printf("banana");
+		}
+		printf("\n");
+	}
+
+	return 0;
 }

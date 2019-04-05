@@ -6,48 +6,48 @@ using namespace std;
 
 int main()
 {
-    static int test, t;
+	static int test, t;
 
-    scanf("%d", &test);
+	scanf("%d", &test);
 
-    getchar();
+	getchar();
 
-    t = test;
+	t = test;
 
-    while(t--)
-    {
+	while(t--)
+	{
 
-        char url[10][120] = {0};
-        int value[10] = {0};
+		char url[10][120] = {0};
+		int value[10] = {0};
 
-        for(int i = 0; i < 10; i++)
-        {
-            scanf("%s %d", url[i], &value[i]);
-            getchar();
-        }
-        int maxima = 0;
+		for(int i = 0; i < 10; i++)
+		{
+			scanf("%s %d", url[i], &value[i]);
+			getchar();
+		}
+		int maxima = 0;
 
-        for(int i = 0; i < 10; i++)
-        {
-
-
-            if( value[i] > maxima)
-            {
-                maxima = value[i];
-            }
-        }
-
-        printf("Case #%d:\n", test-t);
-
-        for(int i = 0; i < 10; i++)
-        {
-            if( value[i] == maxima)
-            {
-                puts(url[i]);
-            }
-        }
+		for(int i = 0; i < 10; i++)
+		{
 
 
-    }
-    return 0;
+			if( value[i] > maxima)
+			{
+				maxima = value[i];
+			}
+		}
+
+		printf("Case #%d:\n", test-t);
+
+		for(int i = 0; i < 10; i++)
+		{
+			if( value[i] == maxima)
+			{
+				puts(url[i]);
+			}
+		}
+
+
+	}
+	return 0;
 }

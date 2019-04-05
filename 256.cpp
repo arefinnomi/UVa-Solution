@@ -25,25 +25,25 @@ using namespace std;
 
 bool quirksome(int num)
 {
-    int left = num, right = 0;
+	int left = num, right = 0;
 
-    int cont = 1;
+	int cont = 1;
 
 	while(1)
-    {
+	{
 
 //		cout<<left << " "<<right<<endl;
 
-        if( (left + right) * (left + right) == num) return 1;
+		if( (left + right) * (left + right) == num) return 1;
 
-        if(left == 0 ) return 0;
+		if(left == 0 ) return 0;
 
-        right += (left % 10) * cont;
+		right += (left % 10) * cont;
 
-        left /= 10;
+		left /= 10;
 
-        cont *= 10;
-    }
+		cont *= 10;
+	}
 }
 
 
@@ -51,17 +51,17 @@ int main()
 {
 	vector < int > store;
 
-    for(int i = 0; i < 10000; i++)
-    {
-        if( quirksome(i*i)) store.push_back(i*i);
-    }
+	for(int i = 0; i < 10000; i++)
+	{
+		if( quirksome(i*i)) store.push_back(i*i);
+	}
 
-//    for(int i = 0; i < store.size(); i++) cout<<store[i]<<endl;
+//	for(int i = 0; i < store.size(); i++) cout<<store[i]<<endl;
 
 
-    int n, left, right, e;
+	int n, left, right, e;
 
-    while(scanf("%d", &n) != EOF)
+	while(scanf("%d", &n) != EOF)
 	{
 
 		for(int i = 0; i < store.size(); i++)
@@ -88,5 +88,5 @@ int main()
 	}
 
 //	main();
-    return 0;
+	return 0;
 }

@@ -8,40 +8,40 @@ using namespace std;
 int main()
 {
 
-    int test, t;
-    scanf("%d", &test);
+	int test, t;
+	scanf("%d", &test);
 
-    getchar();
+	getchar();
 
-    t = test;
+	t = test;
 
-    while(t--)
-    {
-        pair< int , string > url[10];
+	while(t--)
+	{
+		pair< int , string > url[10];
 
-        char str[120];
-        int  value, maxima = 0;
-
-
-        for(int i = 0; i < 10; i++)
-        {
-            scanf("%s %d", str, &value);
-            url[i].first = value;
-
-            url[i].second = string(str);
+		char str[120];
+		int  value, maxima = 0;
 
 
-            if( value > maxima) maxima = value;
+		for(int i = 0; i < 10; i++)
+		{
+			scanf("%s %d", str, &value);
+			url[i].first = value;
 
-        }
-        printf("Case #%d:\n", test-t);
+			url[i].second = string(str);
 
-        for(int i = 0; i < 10; i++)
-        {
 
-            if(url[i].first == maxima)cout<<url[i].second<<endl;
-        }
-    }
+			if( value > maxima) maxima = value;
 
-    return 0;
+		}
+		printf("Case #%d:\n", test-t);
+
+		for(int i = 0; i < 10; i++)
+		{
+
+			if(url[i].first == maxima)cout<<url[i].second<<endl;
+		}
+	}
+
+	return 0;
 }

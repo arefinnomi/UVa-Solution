@@ -28,31 +28,31 @@ bool flag[60];
 
 long long func(int nth)
 {
-    if(flag[nth]) return fib[nth];
+	if(flag[nth]) return fib[nth];
 
-    flag[nth] = 1;
-    if(nth==0)
-    {
-        fib[nth] = 1;
-    }
-    else if( nth==1)
-    {
-        fib[nth] = 1;
-    }
-    else fib[nth] =(long long ) func(nth-1)+func(nth-2);
+	flag[nth] = 1;
+	if(nth==0)
+	{
+		fib[nth] = 1;
+	}
+	else if( nth==1)
+	{
+		fib[nth] = 1;
+	}
+	else fib[nth] =(long long ) func(nth-1)+func(nth-2);
 
-    return fib[nth];
+	return fib[nth];
 }
 
 int main()
 {
-    int i, test, Case = 1;
-    cin>>test;
-    while(Case <= test)
-    {
-        scanf("%d", &i);
-        cout<<"Scenario #"<<Case++<<":\n"<<func(i+1)<<endl<<endl;
-    }
+	int i, test, Case = 1;
+	cin>>test;
+	while(Case <= test)
+	{
+		scanf("%d", &i);
+		cout<<"Scenario #"<<Case++<<":\n"<<func(i+1)<<endl<<endl;
+	}
 //	main();
-    return 0;
+	return 0;
 }

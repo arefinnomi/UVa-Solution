@@ -2,39 +2,39 @@
 
 int main()
 {
-    char t;/*for test case*/
+	char t;/*for test case*/
 
 
-    scanf("%d", &t);
+	scanf("%d", &t);
 
 
-    do
-    {
+	do
+	{
 
 
-        int num1, num2;
-        scanf("%d %d", &num1, &num2);
+		int num1, num2;
+		scanf("%d %d", &num1, &num2);
 
 
-        switch (num1 == num2)
+		switch (num1 == num2)
 
-        {
-        case !0 :
-            printf("%c",'=');
-            break;
+		{
+		case !0 :
+			printf("%c",'=');
+			break;
 
-        default :
-            if(num1 < num2) printf("%c", '<');
-            else  printf("%c", '>');
-            break;
+		default :
+			if(num1 < num2) printf("%c", '<');
+			else  printf("%c", '>');
+			break;
 
-        }
+		}
 
-        printf("%c", '\n');
+		printf("%c", '\n');
 
-    }
-    while(--t);
+	}
+	while(--t);
 
 
-    return 0;
+	return 0;
 }

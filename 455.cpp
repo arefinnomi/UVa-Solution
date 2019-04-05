@@ -26,41 +26,41 @@ char input[10000];
 
 int period(char *str)
 {
-    int i = 0;
-    int len = strlen(str);
+	int i = 0;
+	int len = strlen(str);
 
-    for( i = 0; i < len; i++)
-    {
-        int j;
-        for( j = i+1; j < len; j += i +1 )
-        {
-            int x = 0;
-            for(int k = j; k <= j + i; x++,k++)
-            {
-//                cout<<i spc<<j spc<<k spc<<x;
-                if(str[k] != str[x] ) break;
-            }
-            if( x != i+1) break;
-        }
-        if(j==len) return i+1 ;
-    }
+	for( i = 0; i < len; i++)
+	{
+		int j;
+		for( j = i+1; j < len; j += i +1 )
+		{
+			int x = 0;
+			for(int k = j; k <= j + i; x++,k++)
+			{
+//				cout<<i spc<<j spc<<k spc<<x;
+				if(str[k] != str[x] ) break;
+			}
+			if( x != i+1) break;
+		}
+		if(j==len) return i+1 ;
+	}
 
-    return len;
+	return len;
 }
 
 int main()
 {
 
-    int test, kase=1;
-    scanf("%d",&test);
-    getchar();
-    while (test--)
-    {
-        gets(input);
-        gets(input);
-        if (kase++>1) printf("\n");
-        printf("%d\n",period(input));
+	int test, kase=1;
+	scanf("%d",&test);
+	getchar();
+	while (test--)
+	{
+		gets(input);
+		gets(input);
+		if (kase++>1) printf("\n");
+		printf("%d\n",period(input));
 
-    }
-    return 0;
+	}
+	return 0;
 }

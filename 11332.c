@@ -2,33 +2,33 @@
 
 int main()
 {
-    int num ;
+	int num ;
 
-    while(1)
-    {
-        scanf("%d", &num);
+	while(1)
+	{
+		scanf("%d", &num);
 
-        if( num < !0) break;
+		if( num < !0) break;
 
 
 
-        int sum = num;
+		int sum = num;
 
-        while ( num > 9 )
-        {
-            sum = 0;
-            while( num )
-            {
-                sum = sum + num % 10 ;
-                num = num / 10;
+		while ( num > 9 )
+		{
+			sum = 0;
+			while( num )
+			{
+				sum = sum + num % 10 ;
+				num = num / 10;
 
-            }
+			}
 
-            num = sum;
-        }
+			num = sum;
+		}
 
-        printf("%d\n", sum);
-    }
+		printf("%d\n", sum);
+	}
 
-    return 0;
+	return 0;
 }

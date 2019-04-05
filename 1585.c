@@ -2,37 +2,37 @@
 
 int main()
 {
-    int test;
-    char ch;
+	int test;
+	char ch;
 
-    scanf("%d ", &test);
+	scanf("%d ", &test);
 
 
-    while(test--)
-    {
-        int re, cu; /* the total, the current ans after wrong ans*/
+	while(test--)
+	{
+		int re, cu; /* the total, the current ans after wrong ans*/
 
-        re = cu = 0;
+		re = cu = 0;
 
-        while(1)
-        {
+		while(1)
+		{
 
-            scanf("%c", &ch);
+			scanf("%c", &ch);
 
-            if( ch == 10)
-            {
-                printf("%d\n", re);
-                break;
-            }
+			if( ch == 10)
+			{
+				printf("%d\n", re);
+				break;
+			}
 
-            if( ch == 'O')
-            {
-                cu++;
-                re += cu;
-            }
-            if(ch == 'X') cu = 0;
-        }
-    }
+			if( ch == 'O')
+			{
+				cu++;
+				re += cu;
+			}
+			if(ch == 'X') cu = 0;
+		}
+	}
 
-    return 0;
+	return 0;
 }

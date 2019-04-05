@@ -29,47 +29,47 @@ bool happy_fun( long long s)
 {
 //	cout<<s<<endl;
 
-    long long sqrt = 0;
+	long long sqrt = 0;
 
-    bool happy;
+	bool happy;
 
-    while(s)
-    {
-        sqrt += (s % 10) * (s % 10);
+	while(s)
+	{
+		sqrt += (s % 10) * (s % 10);
 
-        s /= 10;
-    }
+		s /= 10;
+	}
 
-    if(sqrt == num || sub_flag[sqrt]) return false;
-    else if(sqrt == 1 ) return true;
-    else
-    {
+	if(sqrt == num || sub_flag[sqrt]) return false;
+	else if(sqrt == 1 ) return true;
+	else
+	{
 
-        	sub_flag[sqrt] = 1;
-            happy = happy_fun(sqrt);
-            sub_flag[sqrt] = 0;
-            return happy;
+			sub_flag[sqrt] = 1;
+			happy = happy_fun(sqrt);
+			sub_flag[sqrt] = 0;
+			return happy;
 
-    }
+	}
 }
 
 int main()
 {
-//    freopen("out.txt", "w", stdout);
-    long long test, Case, num;
-    cin>>test;
-    Case = 0;
+//	freopen("out.txt", "w", stdout);
+	long long test, Case, num;
+	cin>>test;
+	Case = 0;
 
-    while(Case++ < test)
-    {
+	while(Case++ < test)
+	{
 		cin>>num;
-        printf("Case #%lld: ", Case);
+		printf("Case #%lld: ", Case);
 
 
-        if( happy_fun(num)) printf("%lld is a Happy number.\n", num);
-        else  printf("%lld is an Unhappy number.\n", num);
+		if( happy_fun(num)) printf("%lld is a Happy number.\n", num);
+		else  printf("%lld is an Unhappy number.\n", num);
 
-    }
+	}
 //	main();
-    return 0;
+	return 0;
 }

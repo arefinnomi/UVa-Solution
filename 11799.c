@@ -5,25 +5,25 @@
 
 int main()
 {
-    int test , t ;
+	int test , t ;
 
-    scanf("%d", &test);
+	scanf("%d", &test);
 
-    t = test;
+	t = test;
 
-    while(t--)
-    {
-        int total;
-        scanf("%d", &total);
-        int max = 0, speed;
+	while(t--)
+	{
+		int total;
+		scanf("%d", &total);
+		int max = 0, speed;
 
-        while(total--)
-        {
-            scanf("%d", &speed);
-            if(speed > max) max  = speed;
-        }
+		while(total--)
+		{
+			scanf("%d", &speed);
+			if(speed > max) max  = speed;
+		}
 
-        printf("Case %d: %d\n", test-t, max);
-    }
-    return 0;
+		printf("Case %d: %d\n", test-t, max);
+	}
+	return 0;
 }

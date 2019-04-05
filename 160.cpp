@@ -27,18 +27,18 @@ char prime[(int)200 + 1];
 
 void gen_prime(void)
 {
-    int i, j, limit;
+	int i, j, limit;
 
-    for( i = 2 ; i <= x ; i++) prime[i] = 1;/*let all array index be prime*/
+	for( i = 2 ; i <= x ; i++) prime[i] = 1;/*let all array index be prime*/
 
-    limit = sqrt(x);
+	limit = sqrt(x);
 
-    for( i = 2 ; i <= limit ; i++) /* finding for array index whether it is prime or not*/
-    {
-        if( prime[i] == 1 )
+	for( i = 2 ; i <= limit ; i++) /* finding for array index whether it is prime or not*/
+	{
+		if( prime[i] == 1 )
 
-            for( j = i + i ; j <= x ; j += i) prime[j] = 0 ;
-    }
+			for( j = i + i ; j <= x ; j += i) prime[j] = 0 ;
+	}
 
 }
 
@@ -62,7 +62,7 @@ int main()
 				temp = n;
 				cont = 0;
 
-                while(temp)
+				while(temp)
 				{
 					temp /= i;
 
@@ -84,5 +84,5 @@ int main()
 		store.erase(store.begin(), store.end());
 	}
 
-    return 0;
+	return 0;
 }

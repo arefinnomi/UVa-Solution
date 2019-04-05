@@ -36,12 +36,12 @@ bool bicolored(void)
 	bool color[200];
 	queue <int> q;
 
-    q.push(0);
-    color[0] = 0;
-    visited[0] = 1;
-    int p;
+	q.push(0);
+	color[0] = 0;
+	visited[0] = 1;
+	int p;
 
-    while(q.size())
+	while(q.size())
 	{
 		p = q.front();
 
@@ -51,7 +51,7 @@ bool bicolored(void)
 			{
 				visited[G[p][i]] = 1;
 				q.push(G[p][i]);
-                color[G[p][i]] = !color[p];
+				color[G[p][i]] = !color[p];
 			}
 			else
 			{
@@ -91,5 +91,5 @@ int main()
 
 	}
 
-    return 0;
+	return 0;
 }

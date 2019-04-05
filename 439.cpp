@@ -41,14 +41,14 @@ int bfs( pair < int, int > src, pair < int, int > des )
 
 	for(int i = 0; i < 8; i++) for(int j = 0; j < 8; j++) visited[i][j] = 0;
 
-    temp.push(src);
-    visited[src.first][src.second] = 1;
-    cost[src.first][src.second] = 0;
+	temp.push(src);
+	visited[src.first][src.second] = 1;
+	cost[src.first][src.second] = 0;
 
 	pair <int, int> p;
 	pair <int, int> q;
 
-    while( temp.size() )
+	while( temp.size() )
 	{
 		p = temp.front();
 
@@ -81,9 +81,9 @@ int main()
 		getline(cin, str);
 		if( str == "") return 0;
 
-        printf("To get from %c%c to %c%c takes %d knight moves.\n", str[0], str[1], str[3], str[4], bfs( make_pair(str[0] - 'a', str[1]-'1') ,make_pair( str[3] - 'a', str[4]-'1' )));
+		printf("To get from %c%c to %c%c takes %d knight moves.\n", str[0], str[1], str[3], str[4], bfs( make_pair(str[0] - 'a', str[1]-'1') ,make_pair( str[3] - 'a', str[4]-'1' )));
 	}
 
-    return 0;
+	return 0;
 }
 

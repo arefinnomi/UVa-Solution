@@ -12,35 +12,35 @@
 
 int main()
 {
-    while (1)
-    {
-        char n;/*column & row of square*/
+	while (1)
+	{
+		char n;/*column & row of square*/
 
-        scanf("%d", &n);
+		scanf("%d", &n);
 
-        if ( n == 0) break;
-
-
-        char m_l;/*the numbers of smallest boxes that will make the square boxes in a particular  case*/
-
-        int count = 0;
+		if ( n == 0) break;
 
 
-        for(m_l = n ; m_l ; m_l--)
-        {
-            char c = n; /*represent the column of a particular smallest square box*/
+		char m_l;/*the numbers of smallest boxes that will make the square boxes in a particular  case*/
 
-            for( ; c >= m_l ; c--)
-            {
-                char r = n;/*represent the row of that particular smallest square box*/
+		int count = 0;
 
-                for ( ; r >= m_l ; r--) count++;
-            }
 
-        }
+		for(m_l = n ; m_l ; m_l--)
+		{
+			char c = n; /*represent the column of a particular smallest square box*/
 
-        printf("%d\n", count);
-    }
+			for( ; c >= m_l ; c--)
+			{
+				char r = n;/*represent the row of that particular smallest square box*/
 
-    return 0;
+				for ( ; r >= m_l ; r--) count++;
+			}
+
+		}
+
+		printf("%d\n", count);
+	}
+
+	return 0;
 }

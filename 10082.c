@@ -3,286 +3,286 @@
 
 int main()
 {
-    char str[1000000] ;
+	char str[1000000] ;
 
 
-    while( gets(str))
-    {
-        int i;
-        for( i = 0 ; str[i] != '\0'; i++)
-        {
-            switch ( str[i] )
-            {
-            case '=':
-                str[i] = '-';
-                break;
+	while( gets(str))
+	{
+		int i;
+		for( i = 0 ; str[i] != '\0'; i++)
+		{
+			switch ( str[i] )
+			{
+			case '=':
+				str[i] = '-';
+				break;
 
 
 
-            case '-':
-                str[i] = '0';
-                break;
+			case '-':
+				str[i] = '0';
+				break;
 
 
 
-            case '0':
-                str[i] = '9';
-                break;
+			case '0':
+				str[i] = '9';
+				break;
 
 
 
-            case '9':
-                str[i] = '8';
-                break;
+			case '9':
+				str[i] = '8';
+				break;
 
 
 
-            case '8':
-                str[i] = '7';
-                break;
+			case '8':
+				str[i] = '7';
+				break;
 
 
 
-            case '7':
-                str[i] = '6';
-                break;
+			case '7':
+				str[i] = '6';
+				break;
 
 
 
-            case '6':
-                str[i] = '5';
-                break;
+			case '6':
+				str[i] = '5';
+				break;
 
 
 
-            case '5':
-                str[i] = '4';
-                break;
+			case '5':
+				str[i] = '4';
+				break;
 
 
 
-            case '4':
-                str[i] = '3';
-                break;
+			case '4':
+				str[i] = '3';
+				break;
 
 
 
-            case '3':
-                str[i] = '2';
-                break;
+			case '3':
+				str[i] = '2';
+				break;
 
 
 
-            case '2':
-                str[i] = '1';
-                break;
+			case '2':
+				str[i] = '1';
+				break;
 
 
 
-            case '1':
-                str[i] = '`';
-                break;
+			case '1':
+				str[i] = '`';
+				break;
 
 
 
-            case '\\':
-                str[i] = ']';
-                break;
+			case '\\':
+				str[i] = ']';
+				break;
 
 
 
-            case ']':
-                str[i] = '[';
-                break;
+			case ']':
+				str[i] = '[';
+				break;
 
 
 
-            case '[':
-                str[i] = 'P';
-                break;
+			case '[':
+				str[i] = 'P';
+				break;
 
 
 
-            case 'P':
-                str[i] = 'O';
-                break;
+			case 'P':
+				str[i] = 'O';
+				break;
 
 
 
-            case 'O':
-                str[i] = 'I';
-                break;
+			case 'O':
+				str[i] = 'I';
+				break;
 
 
 
-            case 'I':
-                str[i] = 'U';
-                break;
+			case 'I':
+				str[i] = 'U';
+				break;
 
 
 
-            case 'U':
-                str[i] = 'Y';
-                break;
+			case 'U':
+				str[i] = 'Y';
+				break;
 
 
 
-            case 'Y':
-                str[i] = 'T';
-                break;
+			case 'Y':
+				str[i] = 'T';
+				break;
 
 
 
-            case 'T':
-                str[i] = 'R';
-                break;
+			case 'T':
+				str[i] = 'R';
+				break;
 
 
 
-            case 'R':
-                str[i] = 'E';
-                break;
+			case 'R':
+				str[i] = 'E';
+				break;
 
 
 
-            case 'E':
-                str[i] = 'W';
-                break;
+			case 'E':
+				str[i] = 'W';
+				break;
 
 
 
-            case 'W':
-                str[i] = 'Q';
-                break;
+			case 'W':
+				str[i] = 'Q';
+				break;
 
 
 
-            case '\'':
-                str[i] = ';';
-                break;
+			case '\'':
+				str[i] = ';';
+				break;
 
 
 
-            case ';':
-                str[i] = 'L';
-                break;
+			case ';':
+				str[i] = 'L';
+				break;
 
 
 
-            case 'L':
-                str[i] = 'K';
-                break;
+			case 'L':
+				str[i] = 'K';
+				break;
 
 
 
-            case 'K':
-                str[i] = 'J';
-                break;
+			case 'K':
+				str[i] = 'J';
+				break;
 
 
 
-            case 'J':
-                str[i] = 'H';
-                break;
+			case 'J':
+				str[i] = 'H';
+				break;
 
 
 
-            case 'H':
-                str[i] = 'G';
-                break;
+			case 'H':
+				str[i] = 'G';
+				break;
 
 
 
-            case 'G':
-                str[i] = 'F';
-                break;
+			case 'G':
+				str[i] = 'F';
+				break;
 
 
 
-            case 'F':
-                str[i] = 'D';
-                break;
+			case 'F':
+				str[i] = 'D';
+				break;
 
 
 
-            case 'D':
-                str[i] = 'S';
-                break;
+			case 'D':
+				str[i] = 'S';
+				break;
 
 
 
-            case 'S':
-                str[i] = 'A';
-                break;
+			case 'S':
+				str[i] = 'A';
+				break;
 
 
 
-            case '/':
-                str[i] = '.';
-                break;
+			case '/':
+				str[i] = '.';
+				break;
 
 
 
 
-            case '.':
-                str[i] = ',';
-                break;
+			case '.':
+				str[i] = ',';
+				break;
 
 
 
 
-            case ',':
-                str[i] = 'M';
-                break;
+			case ',':
+				str[i] = 'M';
+				break;
 
 
 
 
-            case 'M':
-                str[i] = 'N';
-                break;
+			case 'M':
+				str[i] = 'N';
+				break;
 
 
 
 
-            case 'N':
-                str[i] = 'B';
-                break;
+			case 'N':
+				str[i] = 'B';
+				break;
 
 
 
 
-            case 'B':
-                str[i] = 'V';
-                break;
+			case 'B':
+				str[i] = 'V';
+				break;
 
 
 
 
-            case 'V':
-                str[i] = 'C';
-                break;
+			case 'V':
+				str[i] = 'C';
+				break;
 
 
 
 
-            case 'C':
-                str[i] = 'X';
-                break;
+			case 'C':
+				str[i] = 'X';
+				break;
 
 
 
 
-            case 'X':
-                str[i] = 'Z';
-                break;
+			case 'X':
+				str[i] = 'Z';
+				break;
 
 
 
 
-            }
-        }
-        puts(str);
-    }
-    return 0;
+			}
+		}
+		puts(str);
+	}
+	return 0;
 }

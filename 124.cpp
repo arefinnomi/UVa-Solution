@@ -50,65 +50,65 @@ void reset(void)
 
 void backtrack( void )
 {
-    if( temp.size() == str.size() ) arch.push_back( temp );
+	if( temp.size() == str.size() ) arch.push_back( temp );
 
-    for(int i = 0; i < str.size(); i++)
-    {
-        if( !flag[i] )
-        {
-            if( in[str[i] - 'a'] == 0 )
-            {
-                for(int j = 0; j < out[str[i] - 'a'].size() ; j++) in[out[str[i] - 'a'][j]]--;
-                flag[i] = 1;
-                temp.push_back(str[i]);
-                backtrack();
-                temp.erase(temp.size()-1);
-                flag[i] = 0;
-                for(int j = 0; j < out[str[i] - 'a'].size() ; j++) in[out[str[i] - 'a'][j]]++;
-            }
-        }
-    }
+	for(int i = 0; i < str.size(); i++)
+	{
+		if( !flag[i] )
+		{
+			if( in[str[i] - 'a'] == 0 )
+			{
+				for(int j = 0; j < out[str[i] - 'a'].size() ; j++) in[out[str[i] - 'a'][j]]--;
+				flag[i] = 1;
+				temp.push_back(str[i]);
+				backtrack();
+				temp.erase(temp.size()-1);
+				flag[i] = 0;
+				for(int j = 0; j < out[str[i] - 'a'].size() ; j++) in[out[str[i] - 'a'][j]]++;
+			}
+		}
+	}
 }
 
 int main()
 {
-    char ch, ch1, ch2, ch3;
-    bool line = 0;
-    while(1)
-    {
+	char ch, ch1, ch2, ch3;
+	bool line = 0;
+	while(1)
+	{
 
-        while( 1 )
-        {
-            if(EOF == scanf("%c", &ch)) return 0;
+		while( 1 )
+		{
+			if(EOF == scanf("%c", &ch)) return 0;
 
-            if( ch == 10 ) break;
-            else if( ch != ' ') str += ch;
-        }
-        while(1)
-        {
-            scanf("%c%c%c%c", &ch, &ch1, &ch2, &ch3);
+			if( ch == 10 ) break;
+			else if( ch != ' ') str += ch;
+		}
+		while(1)
+		{
+			scanf("%c%c%c%c", &ch, &ch1, &ch2, &ch3);
 
-            out[ch-'a'].push_back(ch2-'a');
-            in[ch2-'a']++;
-            if(ch3 == 10) break;
-        }
+			out[ch-'a'].push_back(ch2-'a');
+			in[ch2-'a']++;
+			if(ch3 == 10) break;
+		}
 
-        backtrack();
+		backtrack();
 
-        sort(arch.begin(), arch.end());
+		sort(arch.begin(), arch.end());
 
-    	if( line) nwl;
-    	line = 1;
-        str = "";
-
-
-        for(int i = 0; i < arch.size(); i++) cout<<arch[i]<<endl;
-
-        reset();
-
-    }
+		if( line) nwl;
+		line = 1;
+		str = "";
 
 
+		for(int i = 0; i < arch.size(); i++) cout<<arch[i]<<endl;
 
-    return 0;
+		reset();
+
+	}
+
+
+
+	return 0;
 }

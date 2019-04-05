@@ -5,31 +5,31 @@
 
 int main()
 {
-    int hour, min;
+	int hour, min;
 
-    while(1)
-    {
-        scanf("%d:%d", &hour, &min);
+	while(1)
+	{
+		scanf("%d:%d", &hour, &min);
 
-        if( hour == 0 && min == 0) break;
+		if( hour == 0 && min == 0) break;
 
-        /*
-        let,
-        1 hour = 60
-        1 min = 12
-        */
+		/*
+		let,
+		1 hour = 60
+		1 min = 12
+		*/
 
-        hour = hour * 60 + min;
-        min *= 12;
+		hour = hour * 60 + min;
+		min *= 12;
 
-        int differ = abs(hour - min);
+		int differ = abs(hour - min);
 
-        float angle = differ / 2.0;
+		float angle = differ / 2.0;
 
-        if( angle > 180 ) angle = 360 - angle;
+		if( angle > 180 ) angle = 360 - angle;
 
-        printf("%0.3f\n", angle);
-    }
+		printf("%0.3f\n", angle);
+	}
 
-    return 0;
+	return 0;
 }

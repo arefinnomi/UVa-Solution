@@ -25,57 +25,57 @@ using namespace std;
 
 int main()
 {
-//    freopen("out.txt", "w", stdout);
-//    freopen("in.txt", "r", stdin);
+//	freopen("out.txt", "w", stdout);
+//	freopen("in.txt", "r", stdin);
 
-    string str;
-    string str1;
+	string str;
+	string str1;
 
-    while(1)
-    {
-        cin>>str;
-        str1 = str;
+	while(1)
+	{
+		cin>>str;
+		str1 = str;
 
 //		cout<<"aaaaaaaaaaa"<<endl;
 
-        if(str=="0") break;
+		if(str=="0") break;
 //		cout<<"aaaaaaaaaaa"<<endl;
 
-        long long num;
+		long long num;
 
-        while(str.size() > 2 && str != "10" )
-        {
-            num = (str[0] - '0') * 100 + (str[1] - '0') * 10 + str[2]-'0';
-            num %= 11;
+		while(str.size() > 2 && str != "10" )
+		{
+			num = (str[0] - '0') * 100 + (str[1] - '0') * 10 + str[2]-'0';
+			num %= 11;
 
 			str.erase(str.begin());
-            if(num == 10 ) str[0] = '1',str[1] ='0';
-            else if(num) str[1] = num + '0';
+			if(num == 10 ) str[0] = '1',str[1] ='0';
+			else if(num) str[1] = num + '0';
 
 
-            if(num!=10 && num != 0)
+			if(num!=10 && num != 0)
 
-                str.erase(str.begin());
-            else if( num == 0)
-            {
-                str.erase(str.begin());
-                if(str.size())str.erase(str.begin());
-            }
+				str.erase(str.begin());
+			else if( num == 0)
+			{
+				str.erase(str.begin());
+				if(str.size())str.erase(str.begin());
+			}
 
-//            cout<<str<<endl;
+//			cout<<str<<endl;
 
-        }
+		}
 
-        num = 0;
-        for(int i = 0; i < str.size(); i++) num = num *10 + str[i] -'0';
+		num = 0;
+		for(int i = 0; i < str.size(); i++) num = num *10 + str[i] -'0';
 
-        num %= 11;
+		num %= 11;
 
-        if( !num ) cout<<str1<<" is a multiple of 11."<<endl;
-        else cout<<str1<<" is not a multiple of 11."<<endl;
+		if( !num ) cout<<str1<<" is a multiple of 11."<<endl;
+		else cout<<str1<<" is not a multiple of 11."<<endl;
 
-    }
+	}
 
 //	main();
-    return 0;
+	return 0;
 }

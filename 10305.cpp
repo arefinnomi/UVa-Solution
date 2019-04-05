@@ -37,28 +37,28 @@ vector < int > re;
 
 void top_sort( void )
 {
-    bool flag = 1;
+	bool flag = 1;
 
-    while( flag )
-    {
-//    	cout<<re.size()<<endl;
-        flag = 0;
+	while( flag )
+	{
+//		cout<<re.size()<<endl;
+		flag = 0;
 
-        for(int i = 1; i <= n ; i++)
-        {
-            if( !visited[i] && !in[i] )
-            {
-                re.push_back(i);
-                visited[i] = 1;
-                for( int j = 0; j < out[i].size(); j++) in[ out[i][j] ]--;
-            }
-        }
-        for( int i = 1; i <= n; i++)
-        {
-            if( !visited[i] && !in[i] ) flag = 1;
-//            cout<<i<<" "<<visited[i]<<" "<<in[i]<<endl;
-        }
-    }
+		for(int i = 1; i <= n ; i++)
+		{
+			if( !visited[i] && !in[i] )
+			{
+				re.push_back(i);
+				visited[i] = 1;
+				for( int j = 0; j < out[i].size(); j++) in[ out[i][j] ]--;
+			}
+		}
+		for( int i = 1; i <= n; i++)
+		{
+			if( !visited[i] && !in[i] ) flag = 1;
+//			cout<<i<<" "<<visited[i]<<" "<<in[i]<<endl;
+		}
+	}
 }
 
 void reset(void)
@@ -76,39 +76,39 @@ void reset(void)
 int main()
 {
 
-    int m, x, y;
+	int m, x, y;
 
-    while(1)
-    {
-        cin >> n>> m;
+	while(1)
+	{
+		cin >> n>> m;
 
-        if( n == m && m == 0) return 0;
+		if( n == m && m == 0) return 0;
 
-        for(int i = 0; i < m; i++)
-        {
-            cin >>x>>y;
-            out[x].push_back(y);
-            in[y]++;
-        }
+		for(int i = 0; i < m; i++)
+		{
+			cin >>x>>y;
+			out[x].push_back(y);
+			in[y]++;
+		}
 //
 //		for(int i = 0; i < n; i++) { for(int j = 0; j < out[i].size(); j++) cout<<out[i][j]<<" "; nwl;}
 //
 //		for(int i = 1; i <= n; i++) cout<<in[i]<<" "; nwl;
 
-//        cout<<"here0"<<endl;
-        top_sort();
-//        cout<<"here1"<<endl;
-        for(int i = 0; i < re.size() - 1; i++) cout<<re[i]<<" ";
-        cout<<re[re.size() - 1]<<endl;
+//		cout<<"here0"<<endl;
+		top_sort();
+//		cout<<"here1"<<endl;
+		for(int i = 0; i < re.size() - 1; i++) cout<<re[i]<<" ";
+		cout<<re[re.size() - 1]<<endl;
 
-//        cout<<"here2"<<endl;
-
-
-        reset();
-    }
+//		cout<<"here2"<<endl;
 
 
+		reset();
+	}
 
 
-    return 0;
+
+
+	return 0;
 }

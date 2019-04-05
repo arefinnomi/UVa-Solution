@@ -47,5 +47,5 @@ int main()
 		printf("%lld %lld\n", male[i], male[i] + fem[i]);
 	}
 //	main();
-    return 0;
+	return 0;
 }

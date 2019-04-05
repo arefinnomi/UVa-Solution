@@ -3,30 +3,30 @@
 
 int main()
 {
-    char test;
-    scanf("%d", &test);
+	char test;
+	scanf("%d", &test);
 
-    while(test--)
-    {
-        char word[6];
-        scanf("%s", word);
+	while(test--)
+	{
+		char word[6];
+		scanf("%s", word);
 
-        char count; /*for counting the length of string*/
+		char count; /*for counting the length of string*/
 
-        char num;
+		char num;
 
-        for(count = 1 ; word[count-1] != '\0'; count++) ;
+		for(count = 1 ; word[count-1] != '\0'; count++) ;
 
 
-        if (count == 6) num = 3;
+		if (count == 6) num = 3;
 
-        else if( word[0] == 'o' || word[0] == 'n' || word[0] == 'e') num = 1;
+		else if( word[0] == 'o' || word[0] == 'n' || word[0] == 'e') num = 1;
 
-        else num = 2;
+		else num = 2;
 
-        printf("%d\n", num);
+		printf("%d\n", num);
 
-    }
+	}
 
-    return 0;
+	return 0;
 }

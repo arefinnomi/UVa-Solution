@@ -38,30 +38,30 @@ bool visited[107];
 
 void top_sort( void )
 {
-    bool flag = 1;
+	bool flag = 1;
 
-    while( flag )
-    {
-//    	cout<<re.size()<<endl;
-        flag = 0;
+	while( flag )
+	{
+//		cout<<re.size()<<endl;
+		flag = 0;
 
-        for(int i = 0; i < n ; i++)
-        {
-            if( !visited[i] && !in[i] )
-            {
-                re.push_back(i);
-                visited[i] = 1;
-                for( int j = 0; j < out[i].size(); j++) in[ out[i][j]]--;
+		for(int i = 0; i < n ; i++)
+		{
+			if( !visited[i] && !in[i] )
+			{
+				re.push_back(i);
+				visited[i] = 1;
+				for( int j = 0; j < out[i].size(); j++) in[ out[i][j]]--;
 
-                break;
-            }
-        }
-        for( int i = 0; i < n; i++)
-        {
-            if( !visited[i] && !in[i] ) flag = 1;
-//            cout<<i<<" "<<visited[i]<<" "<<in[i]<<endl;
-        }
-    }
+				break;
+			}
+		}
+		for( int i = 0; i < n; i++)
+		{
+			if( !visited[i] && !in[i] ) flag = 1;
+//			cout<<i<<" "<<visited[i]<<" "<<in[i]<<endl;
+		}
+	}
 }
 
 void reset(void)
@@ -76,37 +76,37 @@ void reset(void)
 int main()
 {
 
-    int m, test = 1;
-    string str1, str2;
-    while( scanf("%d", &n) != EOF)
-    {
-        for(int i = 0; i < n; i++)
-        {
-            cin>>str1;
+	int m, test = 1;
+	string str1, str2;
+	while( scanf("%d", &n) != EOF)
+	{
+		for(int i = 0; i < n; i++)
+		{
+			cin>>str1;
 
-            indx.insert(make_pair(str1, i));
-            arch[i] = str1;
-        }
+			indx.insert(make_pair(str1, i));
+			arch[i] = str1;
+		}
 
-        cin >>m;
-        for(int i = 0; i < m; i++)
-        {
-            cin>>str1>>str2;
+		cin >>m;
+		for(int i = 0; i < m; i++)
+		{
+			cin>>str1>>str2;
 
-            out[indx[str1] ].push_back(indx[str2]);
-            in[indx[str2]]++;
-        }
+			out[indx[str1] ].push_back(indx[str2]);
+			in[indx[str2]]++;
+		}
 
 
-        top_sort();
+		top_sort();
 		printf("Case #%d: Dilbert should drink beverages in this order: ", test++);
-        for(int i = 0; i < re.size() - 1; i++) cout<<arch[re[i]]<<" ";
+		for(int i = 0; i < re.size() - 1; i++) cout<<arch[re[i]]<<" ";
 
-        cout<< arch[re[re.size() - 1]]<<".\n"<<endl;
+		cout<< arch[re[re.size() - 1]]<<".\n"<<endl;
 
 
-        reset();
-    }
+		reset();
+	}
 
-    return 0;
+	return 0;
 }

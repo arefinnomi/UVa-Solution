@@ -4,29 +4,29 @@
 int main()
 {
 
-    char test;
-    scanf("%hd", &test);
+	char test;
+	scanf("%hd", &test);
 
 
-    int total = 0;/*the total amount of balance*/
+	int total = 0;/*the total amount of balance*/
 
 
-    while(test--)
-    {
+	while(test--)
+	{
 
-        char prompt[7];
-        scanf("%s", prompt);
+		char prompt[7];
+		scanf("%s", prompt);
 
-        if( prompt[0] == 'd')
-        {
-            int donate;
-            scanf("%d", &donate);
+		if( prompt[0] == 'd')
+		{
+			int donate;
+			scanf("%d", &donate);
 
 
-            total = total + donate;
-        }
+			total = total + donate;
+		}
 
-        else printf("%d\n", total);
-    }
-    return 0;
+		else printf("%d\n", total);
+	}
+	return 0;
 }
